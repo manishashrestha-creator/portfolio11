@@ -1,0 +1,29 @@
+.about { background: #fff; }
+
+.about-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;
+}
+
+.about-left p { font-size: 0.95rem; line-height: 1.9; color: var(--mid); margin-bottom: 1.2rem; }
+
+.exp-cards { display: flex; flex-direction: column; gap: 0.9rem; margin-top: 1.5rem; }
+.exp-card {
+  padding: 1.1rem 1.4rem; border-radius: 12px;
+  background: linear-gradient(135deg, rgba(242,196,206,0.15), rgba(232,160,176,0.08));
+  border: 1px solid rgba(196,104,122,0.12);
+}
+.exp-title { font-size: 0.95rem; font-weight: 500; color: var(--dark); }
+.exp-dur   { font-size: 0.78rem; color: var(--deep-rose); margin-top: 0.2rem; }
+
+.about-right { display: flex; flex-direction: column; gap: 1rem; }
+.edu-card {
+  padding: 1.2rem 1.5rem; border-radius: 12px;
+  background: var(--cream); border-left: 3px solid var(--rose);
+}
+.edu-year   { font-size: 0.72rem; color: var(--soft); letter-spacing: 0.1em; text-transform: uppercase; }
+.edu-degree { font-size: 0.95rem; font-weight: 500; color: var(--dark); margin: 0.2rem 0; }
+.edu-school { font-size: 0.82rem; color: var(--mid); }
+
+@media (max-width: 960px) {
+  .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+}
