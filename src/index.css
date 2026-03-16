@@ -1,0 +1,107 @@
+/* ── Global Reset & Variables ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --cream:     #fdf8f3;
+  --blush:     #f7e8e8;
+  --pink:      #f2c4ce;
+  --rose:      #e8a0b0;
+  --deep-rose: #c4687a;
+  --mauve:     #8b5a6e;
+  --dark:      #2a1a22;
+  --mid:       #6b4a57;
+  --text:      #3d2535;
+  --soft:      #9e7a8a;
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body:    'DM Sans', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--cream);
+  color: var(--text);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+img { display: block; max-width: 100%; }
+
+/* ── Shared layout ── */
+.container { max-width: 1200px; margin: 0 auto; }
+
+section { padding: 7rem 4rem; }
+
+/* ── Typography helpers ── */
+.section-label {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--soft);
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-weight: 300;
+  color: var(--dark);
+  margin-bottom: 1rem;
+}
+.section-title em { color: var(--deep-rose); font-style: italic; }
+
+.divider {
+  width: 48px; height: 2px;
+  background: linear-gradient(90deg, var(--deep-rose), var(--rose));
+  border-radius: 2px;
+  margin-bottom: 2.5rem;
+}
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.85rem 2rem;
+  border-radius: 40px;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: all 0.25s;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--deep-rose), var(--mauve));
+  color: #fff;
+  box-shadow: 0 8px 32px rgba(196,104,122,0.4);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(196,104,122,0.55); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--deep-rose);
+  border: 1.5px solid var(--rose);
+}
+.btn-outline:hover { background: rgba(196,104,122,0.06); }
+
+/* ── Scroll reveal animation ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.reveal { animation: fadeUp 0.6s ease both; }
+
+/* ── Spinning ring animation ── */
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Responsive ── */
+@media (max-width: 960px) {
+  section { padding: 5rem 2rem; }
+}
+@media (max-width: 600px) {
+  section { padding: 4rem 1.5rem; }
+}
